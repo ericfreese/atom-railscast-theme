@@ -1,0 +1,12 @@
+{
+  "name": "railscast-theme",
+  "theme": "syntax",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Atom syntax theme based on Ryan Bates (@rbates) RailsCasts TextMate theme",
+  "repository": "https://github.com/ericfreese/atom-railscast-theme",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}
