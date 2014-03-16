@@ -1,3 +1,5 @@
-# Atom RailsCasts Theme
+# RailsCast Syntax Theme
 
-Atom syntax theme based on Ryan Bates (@rbates) RailsCasts TextMate theme
+Syntax theme based on the RailsCast TextMate theme.
+
+![railscast theme](http://i.imgur.com/rUrA8OB.png)
