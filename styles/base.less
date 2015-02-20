@@ -2,116 +2,119 @@
 
 atom-text-editor, :host {
   &, .gutter {
-    background-color: #2b2b2b;
-    color: #e6e1dc;
+    background-color: @syntax-background-color;
+    color: @syntax-text-color;
   }
 
   .cursor {
-    border-color: #fff;
+    border-color: @syntax-cursor-color;
   }
 
   .highlights .region {
-    background-color: rgba(90, 100, 126, 0.6);
+    background-color: @syntax-selection-color;
   }
 
   .line-number.cursor-line-no-selection, .line.cursor-line {
-    background-color: #333435;
+    background-color: @syntax-cursor-line;
   }
 
-  .indent-guide,
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
   .invisible-character {
-    opacity: 0.1;
+    color: @syntax-invisible-character-color;
   }
 }
 
 .comment {
   font-style: italic;
-  color: #bc9458;
+  color: @gold;
 }
 
 .keyword,
 .storage {
-  color: #cc7833;
+  color: @orange;
 }
 
 .entity.name.function,
 .keyword.other.name-of-parameter.objc {
-  color: #ffc66d;
+  color: @yellow;
 }
 
 .entity.name {
-  color: #ffffff;
+  color: @white;
 }
 
 .constant.numeric {
-  color: #a5c261;
+  color: @lime;
 }
 
 .variable.language,
 .variable.other {
-  color: #d0d0ff;
+  color: @lilac;
 }
 
 .constant {
-  color: #6d9cbe;
+  color: @light-blue;
 }
 
 .variable.other.constant {
-  color: #da4939;
+  color: @light-red;
 }
 
 .constant.language {
-  color: #6e9cbe;
+  color: @light-blue;
 }
 
 .string {
-  color: #a5c261;
+  color: @lime;
 }
 
 .support.function {
-  color: #da4939;
+  color: @light-red;
 }
 
 .support.type {
-  color: #6e9cbe;
+  color: @light-blue;
 }
 
 .support.constant {
-  color: #a5c261;
+  color: @lime;
 }
 
 .meta.tag,
 .declaration.tag,
 .entity.name.tag,
 .entity.other.attribute-name {
-  color: #e8bf6a;
+  color: @off-yellow;
 }
 
 .invalid {
-  color: #ffffff;
-  background-color: #990000;
+  color: @white;
+  background-color: @red;
 }
 
 .constant.character.escaped,
 .constant.character.escape,
 .string .source,
 .string .source.ruby {
-  color: #519f50;
+  color: @green;
 }
 
 .markup.inserted {
-  color: #e6e1dc;
-  background-color: #144212;
+  color: @off-white;
+  background-color: @dark-green;
 }
 
 .markup.deleted {
-  color: #e6e1dc;
-  background-color: #660000;
+  color: @off-white;
+  background-color: @dark-red;
 }
 
 .meta.diff.header,
 .meta.separator.diff,
 .meta.diff.index,
 .meta.diff.range {
-  background-color: #2f33ab;
+  background-color: @blue;
 }
