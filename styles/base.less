@@ -1,6 +1,6 @@
 @import "syntax-variables";
 
-atom-text-editor, :host {
+atom-text-editor {
   &, .gutter {
     background-color: @syntax-background-color;
     color: @syntax-text-color;
@@ -27,94 +27,94 @@ atom-text-editor, :host {
   }
 }
 
-.comment {
+.syntax--comment {
   font-style: italic;
   color: @gold;
 }
 
-.keyword,
-.storage {
+.syntax--keyword,
+.syntax--storage {
   color: @orange;
 }
 
-.entity.name.function,
-.keyword.other.name-of-parameter.objc {
+.syntax--entity.syntax--name.syntax--function,
+.syntax--keyword.syntax--other.syntax--name-of-parameter.syntax--objc {
   color: @yellow;
 }
 
-.entity.name {
+.syntax--entity.syntax--name {
   color: @white;
 }
 
-.constant.numeric {
+.syntax--constant.syntax--numeric {
   color: @lime;
 }
 
-.variable.language,
-.variable.other {
+.syntax--variable.syntax--language,
+.syntax--variable.syntax--other {
   color: @lilac;
 }
 
-.constant {
+.syntax--constant {
   color: @light-blue;
 }
 
-.variable.other.constant {
+.syntax--variable.syntax--other.syntax--constant {
   color: @light-red;
 }
 
-.constant.language {
+.syntax--constant.syntax--language {
   color: @light-blue;
 }
 
-.string {
+.syntax--string {
   color: @lime;
 }
 
-.support.function {
+.syntax--support.syntax--function {
   color: @light-red;
 }
 
-.support.type {
+.syntax--support.syntax--type {
   color: @light-blue;
 }
 
-.support.constant {
+.syntax--support.syntax--constant {
   color: @lime;
 }
 
-.meta.tag,
-.declaration.tag,
-.entity.name.tag,
-.entity.other.attribute-name {
+.syntax--meta.syntax--tag,
+.syntax--declaration.syntax--tag,
+.syntax--entity.syntax--name.syntax--tag,
+.syntax--entity.syntax--other.syntax--attribute-name {
   color: @off-yellow;
 }
 
-.invalid {
+.syntax--invalid {
   color: @white;
   background-color: @red;
 }
 
-.constant.character.escaped,
-.constant.character.escape,
-.string .source,
-.string .source.ruby {
+.syntax--constant.syntax--character.syntax--escaped,
+.syntax--constant.syntax--character.syntax--escape,
+.syntax--string .syntax--source,
+.syntax--string .syntax--source.syntax--ruby {
   color: @green;
 }
 
-.markup.inserted {
+.syntax--markup.syntax--inserted {
   color: @off-white;
   background-color: @dark-green;
 }
 
-.markup.deleted {
+.syntax--markup.syntax--deleted {
   color: @off-white;
   background-color: @dark-red;
 }
 
-.meta.diff.header,
-.meta.separator.diff,
-.meta.diff.index,
-.meta.diff.range {
+.syntax--meta.syntax--diff.syntax--header,
+.syntax--meta.syntax--separator.syntax--diff,
+.syntax--meta.syntax--diff.syntax--index,
+.syntax--meta.syntax--diff.syntax--range {
   background-color: @blue;
 }
