@@ -1,0 +1,336 @@
+@_background:     @syntax-background-color; // not used
+@_background_alt: #202020; // not used
+@_text:           @syntax-text-color;
+@_text_alt:       @syntax-cursor-color;
+@_syntax:         @orange;
+@_syntax_alt:     @yellow;
+@_content:        @lime;
+@_variable:       @light-blue;
+@_constant:       @lilac; // not used
+@_neutral:        @gray; // not used
+
+
+// General markup
+
+.syntax--markup {
+
+  &.syntax--bold,
+  &.syntax--heading,
+  &.syntax--strong.syntax--emphasis {
+    font-weight: bold;
+  }
+
+  &.syntax--italic,
+  &.syntax--emphasis:not(.syntax--strong) {
+    font-style: italic;
+  }
+
+  &.syntax--underline {
+    text-decoration: underline;
+  }
+
+  &.syntax--strike {
+    text-decoration: line-through;
+  }
+
+  &.syntax--bold {
+    .syntax--text.syntax--md > & {
+      color: @_text_alt;
+    }
+  }
+
+}
+
+
+// Custom markdown styles
+
+.syntax--text.syntax--md {
+  .syntax--md {
+    &.syntax--punctuation:not(.syntax--comment) {
+      //color: 0.5;
+      color: @_syntax;
+    }
+
+    &.syntax--heading {
+      color: @_syntax_alt;
+
+      .syntax--punctuation {
+        color: @_syntax;
+        font-weight: normal;
+      }
+
+      .syntax--emphasis {
+        font-weight: normal;
+      }
+    }
+
+    &.syntax--hr {}
+
+    &.syntax--reference,
+    &.syntax--quote {
+      color: @_content;
+    }
+
+    &.syntax--link {
+      &.syntax--text {}
+      &.syntax--destination {
+        .syntax--uri {
+          //color: @_variable;
+          //text-decoration: underline;
+        }
+      }
+      &.syntax--title {
+        //color: @_syntax_alt;
+        //font-style: italic;
+      }
+      &.syntax--string {
+        //color: @_content;
+      }
+
+
+      &.syntax--auto,
+      &.syntax--destination {
+        color: @_variable;
+      }
+
+      /*
+      &.syntax--content.syntax--block {
+        background: fade(@_variable, 10%);
+      }
+      */
+    }
+
+    &.syntax--gfm {}
+
+    // TODO:
+    &.syntax--reference {
+      &.syntax--class {
+        font-weight: normal;
+      }
+      &.syntax--link {
+        color: @_syntax;
+      }
+    }
+
+    &.syntax--list {
+      &.syntax--ordered {
+        > .syntax--punctuation {
+          color: @_syntax_alt;
+        }
+      }
+      &.syntax--unordered {}
+      /*
+      & > .syntax--checkbox {
+        color: @_content;
+      }
+      */
+      &.syntax--task {
+        &.syntax--completed {
+          //text-decoration: line-through;
+          //text-decoration-color: @_syntax_alt;
+
+          /*
+          color: @_text;
+          opacity: 0.33;
+          & > .syntax--punctuation {
+            color: @_text;
+            opacity: 0.667;
+          }
+
+          .syntax--code {
+            background: transparent;
+            color: @_text;
+          }
+
+          .syntax--comment,
+          .syntax--strike,
+          .syntax--reference,
+          .syntax--link,
+          .syntax--constant,
+          .syntax--emphasis,
+          .syntax--heading,
+          .syntax--quote,
+          .syntax--todo,
+          .syntax--review {
+            opacity: 1;
+            color: inherit;
+            font-weight: normal;
+
+            .syntax--punctuation {
+              opacity: 1;
+            }
+          }
+
+          .syntax--strike,
+          .syntax--underline {
+            text-decoration: none;
+          }
+
+          .syntax--fixme {
+            background: transparent;
+            outline: none;
+            color: inherit;
+          }
+          */
+        }
+      }
+
+      /*
+      &.syntax--empty {
+        .syntax--punctuation {
+          color: @_syntax;
+        }
+      }
+      */
+    }
+
+    &.syntax--code {
+      &:not(.syntax--fenced) {
+        //background: fade(@_neutral, 10%);
+        //background: @_background_alt;
+        color: @_content;
+
+        .syntax--punctuation {
+          color: @_syntax;
+          font-weight: bold;
+        }
+      }
+
+      &.syntax--fenced {
+        //color: @_neutral;
+        color: @_text;
+        //background: fade(@_neutral, 10%);
+        //background: @_background_alt;
+
+        .syntax--punctuation {
+          color: @_syntax;
+          font-weight: bold;
+        }
+
+
+        &.syntax--info {}
+
+        .syntax--embedded.syntax--source {
+          color: @_text;
+        }
+
+        //.line.code-block & {
+        //  background: transparent;
+        //}
+      }
+    }
+
+    /*
+    &.syntax--math:not(.syntax--punctuation) {
+      //background: @_background_alt; // fade(@_neutral, 10%);
+      color: @_text;
+
+      /*
+      .line.code-block & {
+        background: transparent;
+      }
+      */
+      /*
+    }
+    */
+
+    &.syntax--constant {
+      &.syntax--language {}
+    }
+
+    &.syntax--emphasis {
+      &:not(.syntax--strong) {
+        //color: @_text_alt;
+      }
+
+      &:not(.syntax--strong) .syntax--strong {
+        //font-style: italic;
+      }
+
+      .syntax--punctuation {
+        font-style: normal;
+        font-weight: normal;
+      }
+    }
+
+    &.syntax--strong {}
+
+    &.syntax--table {
+      //color: @_syntax_alt;
+      color: @_text;
+
+      > .syntax--punctuation {
+        color: @_syntax;
+
+        &.syntax--alignment {
+          color: @_syntax_alt;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &.syntax--strike {
+      opacity: 0.8;
+    }
+
+    &.syntax--critic {
+      &.syntax--addition {}
+      &.syntax--deletion {}
+      &.syntax--comment {
+        font-style: normal;
+      }
+      &.syntax--substitution {}
+    }
+
+
+    &.syntax--special-attributes {}
+
+    &.syntax--attribute {
+      /*
+      & > .syntax--punctuation {
+        font-weight: normal;
+      }
+      */
+      &.syntax--special {
+        &.syntax--other {
+          color: inherit;
+          //color: @_text;
+        }
+
+        &.syntax--id:not(.syntax--punctuation) {
+          color: @_syntax_alt;
+          font-weight: bold;
+        }
+
+        &.syntax--class {
+          font-weight: normal;
+        }
+      }
+      /*
+      .syntax--value {
+        &.syntax--storage {
+          color: @_syntax_alt;
+        }
+      }
+      */
+    }
+
+    // TODO, FIXME, etc.
+    &.syntax--type {
+      &.syntax--bug,
+      &.syntax--changed,
+      &.syntax--fixme,
+      &.syntax--idea,
+      &.syntax--nb,
+      &.syntax--note,
+      &.syntax--xxx,
+      &.syntax--hack,
+      &.syntax--review,
+      &.syntax--todo,
+      &.syntax--review,
+      &.syntax--hack {
+        color: inherit;
+      }
+    }
+  }
+}
